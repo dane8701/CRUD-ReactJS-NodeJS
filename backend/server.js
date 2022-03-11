@@ -37,6 +37,16 @@ const errorHandler = error => {
 
 const server = http.createServer(app);
 
+const io = require('socket.io')(server);
+
+app.get('/', (req, res, next) => {
+  res.sendFile(``);
+})
+io.on('connection', (socket) => {
+  
+});
+
+
 server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
