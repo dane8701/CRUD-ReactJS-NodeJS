@@ -9,8 +9,8 @@ router.put('/:id', auth, productCtrl.modifyProduct);
 
 router.delete('/:id', auth, productCtrl.deleteProduct);
 
-router.get('/:id', auth, productCtrl.getOneProduct);
+router.get('/:id', productCtrl.getOneProduct);
 
-router.get('/', auth, productCtrl.getAllProducts);
+router.get('/', productCtrl.getAllProducts);
 
 module.exports = router;
