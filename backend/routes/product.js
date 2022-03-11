@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
+const productCtrl = require('../controllers/product');
 
-const productCtrl = require('../controllers/product')
-
-router.post('/', productCtrl.createProduct);
+router.post('/', auth, productCtrl.createProduct);
 
 router.put('/:id', productCtrl.modifyProduct);
 

@@ -1,14 +1,16 @@
 const express = require('express');
-const { json } = require('express/lib/response');
-const app = express();
 const mongoose = require('mongoose');
 
+const productRoutes = require('./routes/product');
+
 mongoose.connect('mongodb+srv://crud:crud@crud.6h7so.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    { useNewUrlParser: true,
+{ useNewUrlParser: true,
     useUnifiedTopology: true }
   )
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
+  
+const app = express();
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,5 +21,6 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+app.use('/api/product', productRoutes);
 
 module.exports = app;
