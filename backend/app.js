@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://crud:crud@crud.6h7so.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:MVM75zX81NZJNJmf@clusterfree.onhaoec.mongodb.net/crud',
 { useNewUrlParser: true,
     useUnifiedTopology: true }
   )
